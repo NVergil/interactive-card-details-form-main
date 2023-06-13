@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  /* (active input border) */
+  --linear-gradient: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+
+  /* (input errors) */
+  --red: hsl(0, 100%, 66%);
+
+  /* ### Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  /* ## Typography */
+
+  --size: 18px;
+
+  /* ### Font */
+  /* - Weights: 500 */
+  /* [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) */
+
+  --font-grotesk: "Space Grotesk", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 5rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  font-family: var(--font-grotesk);
+}
+::placeholder,
+input,
+button {
+  font-family: var(--font-grotesk);
+}
+::placeholder {
+  color: var(--light-grayish-violet);
+  font-size: 1.1rem;
+}
+label {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: var(--very-dark-violet);
+  margin-bottom: 0.5rem;
+}
+
+.side-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 60%;
+  left: 0;
+  background: url("/bg-main-desktop.png") no-repeat;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7rem;
+  margin: 0 auto;
+  max-width: 1033px;
+  width: 100%;
+}
+
+picture {
+  flex: 1;
+}
+.card-front-data {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  max-height: 245px;
+  height: 100%;
+  max-width: 447px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+.logo {
+  width: 85px;
+}
+.card-front-data-info div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.front-digits {
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+}
+.name {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.exp-date-numbers {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.card-back-data {
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 7.5rem;
+  left: 27.4rem;
+}
+
+form {
+  flex: 1;
+  max-width: 449px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 0.82rem 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid var(--light-grayish-violet);
+  margin-bottom: 1.5rem;
+}
+
+input:focus {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, var(--linear-gradient)) border-box;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.front {
+  margin-bottom: 2rem;
+}
+
+.back {
+  margin-left: 5rem;
+}
+
+.date-container {
+  display: flex;
+  align-items: end;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.exp-date {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.65rem;
+}
+
+.exp-date div {
+  flex: 1;
+}
+
+#exp-date {
+  max-width: 95px;
+  width: 100%;
+  margin-bottom: 0;
+}
+#exp-date-yy {
+  max-width: 95px;
+  margin-bottom: 0;
+}
+#cvc {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.error-states-messages {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  color: var(--red);
+  font-size: 12px;
+}
+
+.error-states-inputs {
+  border: 1px solid var(--red);
+}
+
+button {
+  margin-top: 2rem;
+  background: var(--very-dark-violet);
+  color: var(--white);
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.93rem;
+  font-size: var(--size);
+  cursor: pointer;
+}
+
+.success-container {
+  max-width: 449px;
+  text-align: center;
+  width: 100%;
+}
+
+.success-container h1 {
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.success-container p {
+  color: var(--dark-grayish-violet);
+  font-size: var(--size);
+}
+
+.success-container button {
+  width: 100%;
+}
+
+.attribution {
+  position: relative;
+  margin-top: 1rem;
+  font-size: 12px;
+  text-align: end;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1220px) {
+  body {
+    padding: 5rem;
+  }
+  .container {
+    gap: 4rem;
+  }
+}
+@media screen and (max-width: 1136px) {
+  body {
+    padding: 2rem;
+  }
+  .container {
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .side-background {
+    position: absolute;
+    background: url("/bg-main-mobile.png") no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    max-height: 32%;
+  }
+  picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 343px;
+    width: 100%;
+    min-height: 250px;
+  }
+
+  .front {
+    position: absolute;
+    align-self: start;
+    z-index: 1;
+    width: 286px;
+    top: 5.55rem;
+    margin: 0;
+  }
+  .back {
+    width: 286px;
+    position: absolute;
+    align-self: end;
+    margin: 0;
+  }
+  .card-front-data {
+    padding: 1rem;
+    z-index: 2;
+    max-height: 156.75px;
+    height: 100%;
+    max-width: 286px;
+    width: 100%;
+    top: 5.5rem;
+  }
+  .card-front-data div {
+    margin-top: 1rem;
+  }
+  .logo {
+    width: 3.5rem;
+  }
+  .front-digits {
+    font-size: var(--size);
+    letter-spacing: 2px;
+  }
+  .name {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .exp-date-numbers {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .card-back-data {
+    left: initial;
+    top: 4.45rem;
+    right: 2rem;
+    font-size: 10px;
+  }
+  .success-container button {
+    margin-top: 3rem;
+  }
+.attribution {
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 425px) {
+  .error-states-messages {
+    font-size: 10px;
+  }
+}
